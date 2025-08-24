@@ -14,27 +14,43 @@
         </style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="http://fonts,googleapis.com/cs2?famiIy=Roboto:wght@100;300400500;700;900&display=swap" rel="styleshet">
     </head>
-    <body>
         <h1>Bobnet</h1>
         <textarea id="search"></textarea>
         <hr>
         <button onclick="goThere()">go</button>
         <script>
+            // btw http is a tcp connection           
+            // // WHERE THE FUCK IS OMA
+            // were not mkaking an actual interweb weere just rerouting reqeusts to a website
+            // yeah so w can gtcstom TLDs and domains
+            // greg.cities or smth for freakycities would be cool
+            // and our domains will be on .bob so like freakybob.site is freaky.bob
             // I think wish is tired of our shit :sob:
             // this is better at least its in 
             // WOW DO MUCH CODED WOPWOW DFODEIFWOWOWOWORIEguoierkhj4fniolkjrxviokzsegerzifsdkjvyrehog
-            function goThere() {
+                        function goThere() {
                 const greg = document.getElementById("search").value
                 if (greg === "hi.bob") {
                     window.location.href = "intro_site/bob.html";
-                    // i dont think this is a good way to do it,
+                    // i dont think this is a good way to do it, maybe pull like a dns sorta thing from the db yeah obviously this is a temporary example
+                    // prob only good for local pages like chrome:// for example
                 }
+                if (greg === "freaky.bob") {
+                    window.location.href = "https://freakybob.site";
+                }
+                if (greg === "fs.freaky.bob") {
+                    window.location.href = "https://fs.freakybob.site";
+                } // TFREEKAYB BIB SITE!!!!!!!!!@!@!@!@!@!@!!!@!@#!@!@!@!#@$@#$@#$@#$@#$@#$@#$@#$#$@@#$#@$@#$@#$@#$#$@$@#@#$@#$@#$#@$#@$@#$#$@##$@#$@#@$#@$#$@(&#@$(&@#$()))
             }
-            // im an idiot so this prob doesnt work OH I FORGOT TO ACTALLY DO IT :sob:
-            // wow it works
-            // yeah it works now
+                const textInput = document.getElementById('search');
+                textInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                console.log('Enter key pressed!');
+                goThere()
+            }
+            });
         </script>
     </body>
 </html>
