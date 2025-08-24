@@ -1,2 +1,2 @@
 # bobnet
- we literally made the internet again wtf
+ we literally made the internet wtf
