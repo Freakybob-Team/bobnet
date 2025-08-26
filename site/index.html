@@ -22,22 +22,25 @@
         <hr>
         <button onclick="goThere()">go</button>
         <script>
-// BobNet by Freakybob Team.
-// Licensed under GPL-3.0.
-// If used in your project, please credit this repository and us!
-// Thank you <3
-                        function goThere() {
+            // BobNet by Freakybob Team.
+            // Licensed under GPL-3.0.
+            // If used in your project, please credit this repository and us!
+            // Thank you <3
+            function goThere() {
                 const greg = document.getElementById("search").value
                 if (greg === "hi.bob") {
                     window.location.href = "intro_site/bob.html";
                     // i dont think this is a good way to do it, maybe pull like a dns sorta thing from the db yeah obviously this is a temporary example
                     // prob only good for local pages like chrome:// for example
                 }
-                if (greg === "freaky.bob") {
+                if (greg === "freaky.link.bob") {
                     window.location.href = "https://freakybob.site";
                 }
-                if (greg === "fs.freaky.bob") {
+                if (greg === "fs.link.bob") {
                     window.location.href = "https://fs.freakybob.site";
+                }
+                if (greg === "know.bob") {
+                    window.location.href = "know_your_stuff/index.html"
                 }
             }
                 const textInput = document.getElementById('search');
