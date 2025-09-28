@@ -4,7 +4,7 @@
 // Thank you <3
 let mapping = null;
 
-fetch("https://freakybob-team.github.io/bobnet/json/sites.json")
+fetch("https://freakybob-team.github.io/bobnet/json/sites.json", { cache: "no-store" })
     .then(res => res.json())
     .then(data => {
         mapping = data;
