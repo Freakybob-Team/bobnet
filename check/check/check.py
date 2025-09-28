@@ -1,4 +1,5 @@
 import urllib.request, json 
+jsonurl = input("What URL would you like? Default is Freakybob Team's. ") or "https://freakybob-team.github.io/bobnet/json/sites.json"
 with urllib.request.urlopen("https://freakybob-team.github.io/bobnet/json/sites.json") as url:
     data = json.loads(url.read().decode())
 isExist = None
