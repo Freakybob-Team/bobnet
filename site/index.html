@@ -26,10 +26,10 @@
     </head>
         <h1>BobNet</h1>
         <p>we made our own URLs WOW.. hint: press enter to visit smth if you dont like pressing buttons</p>
-        <textarea id="search"></textarea>
-        <hr>
-        <button onclick="goThere()">go</button>
-        <!-- this is a HORRIBLE system, switch to forms soon -->
+        <form onsubmit="goThere(); return false;">
+            <input id="search" type="text" name="search" style="color: black;">
+            <input type="submit" value="Go" style="color: black;">
+        </form>
         <script src="js/search.js"></script>
     </body>
 </html>
