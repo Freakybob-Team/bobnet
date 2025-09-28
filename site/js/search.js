@@ -3,8 +3,21 @@
 // If used in your project, please credit this repository and us!
 // Thank you <3
 let mapping = null;
-
-fetch("https://freakybob-team.github.io/bobnet/json/sites.json", { cache: "no-store" })
+let jsonurl = "https://freakybob-team.github.io/bobnet/json/sites.json"
+form = document.getElementById('customJSONForm');
+function customJSON() {
+    form.style.display = "block";
+}
+function useJSON() {
+    input = document.getElementById('jsonurl');
+    jsonurl = input.value
+    form.style.display = "none";
+}
+document.getElementById("customJSONForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    useJSON();
+});
+fetch(jsonurl, { cache: "no-store" })
     .then(res => res.json())
     .then(data => {
         mapping = data;

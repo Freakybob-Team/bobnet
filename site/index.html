@@ -33,12 +33,19 @@
             <input id="search" type="text" name="search" style="color: black;">
             <input type="submit" value="Go" style="color: black;">
         </form>
+        <button onclick="customJSON()">use custom JSON source (for experienced users)</button>
+        <form id="customJSONForm" style="display: none;">
+            <input id="jsonurl" type="url" name="jsonurl" style="color: black;">
+            <input type="submit" value="Switch!" style="color: black;">
+        </form>
         <script src="js/search.js"></script>
         <script>
-        document.getElementById("bobForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            goThere();
-        });
+        </script>
+        <script>
+            document.getElementById("bobForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                goThere();
+            });
         </script>
     </body>
 </html>
