@@ -26,10 +26,16 @@
     </head>
         <h1>BobNet</h1>
         <p>we made our own URLs WOW.. hint: press enter to visit smth if you dont like pressing buttons</p>
-        <form onsubmit="goThere(); return false;">
+        <form id="bobForm">
             <input id="search" type="text" name="search" style="color: black;">
             <input type="submit" value="Go" style="color: black;">
         </form>
         <script src="js/search.js"></script>
+        <script>
+        document.getElementById("bobForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            goThere();
+        });
+        </script>
     </body>
 </html>
