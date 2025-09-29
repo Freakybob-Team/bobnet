@@ -6,6 +6,7 @@ from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import * 
 import os
 import sys
+import json, urllib.request
 # change to pyqt6 when it works - stolen from geeks4geeks https://www.geeksforgeeks.org/python/creating-a-simple-browser-using-pyqt5/
 
 # creating main window class
@@ -125,8 +126,23 @@ class MainWindow(QMainWindow):
 
         # if url is scheme is blank
         if q.scheme() == "":
-            # set url scheme to html
-            q.setScheme("bob")
+            print(self.urlbar.text())
+            q.setScheme("bob://")
+            print("set scheme to bob")
+
+        if q.scheme() == "bob://":
+            print(self.urlbar.text())
+            with urllib.request.urlopen("https://freakybob-team.github.io/bobnet/json/sites.json") as url:
+                print("get json gotten")
+                data = json.loads(url.read().decode())
+                mapping = dict(zip(data["sitename"], data["sitelink"]))
+                if self.urlbar.text() in mapping:
+                    link = mapping[self.urlbar.text()]
+                    print(link)
+                    global qB
+                    qB = QUrl(link)
+                    print(qB)
+                    self.browser.setUrl(qB)
 
         # set the url to the browser
         self.browser.setUrl(q)
@@ -136,7 +152,10 @@ class MainWindow(QMainWindow):
     def update_urlbar(self, q):
 
         # setting text to the url bar
-        self.urlbar.setText(q.toString())
+        try:
+            self.urlbar.setText(qB.toString())
+        except:
+            self.urlbar.setText(q.toString())
 
         # setting cursor position of the url bar
         self.urlbar.setCursorPosition(0)
